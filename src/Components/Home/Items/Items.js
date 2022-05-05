@@ -13,8 +13,8 @@ const Items = () => {
             })
     }, [])
     return (
-        <div className='container position: absolute;
-        left:120'>
+        <div id='item' className='container '>
+            <h1 className='text-center pt-5'>Product Collection</h1>
             <div className='row'>
                 {
                     items.map(item => <Item
