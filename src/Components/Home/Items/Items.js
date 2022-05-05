@@ -9,7 +9,7 @@ const Items = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setItems(data)
+                setItems(data.slice(0, 5))
             })
     }, [])
     return (
