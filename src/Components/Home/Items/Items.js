@@ -8,8 +8,7 @@ const Items = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                setItems(data.slice(0, 5))
+                setItems(data)
             })
     }, [])
     return (
