@@ -35,9 +35,9 @@ const Login = () => {
     }
 
     return (
-        <div className='container w-50 mx-auto'>
+        <div className='w-50 mx-auto register-form'>
             <h1 className='text-center mt-2'>Please Login</h1>
-            <Form onSubmit={handleSubmit}>
+            {/* <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
                 </Form.Group>
@@ -51,7 +51,12 @@ const Login = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
-            </Form>
+            </Form> */}
+            <form onSubmit={handleSubmit}>
+                <input ref={emailRef} type="email" name="email" id="" placeholder='Email Address' required />
+                <input ref={passwordRef} type="password" name="password" id="" placeholder='Password' required />
+                <input type="submit" value="Register" />
+            </form>
             <h6>New to BIKE WAY ? <Link to='/register' className='text-danger pe-auto  text-decoration-none' onClick={navigateRegister}>Please Register</Link></h6>
         </div>
     );
