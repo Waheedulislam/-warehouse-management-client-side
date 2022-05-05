@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Yamaha R15 v3",
+        "img": "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2021/10/Yamaha-R15-V4-1.jpg",
+        "price": "$1500",
+        "description": "The Yamaha YZF-R15 V3.0 BS6 gets a slightly reworked engine and new features. It is powered by a 155cc,",
+        "SellerName": "Jurica Koletic",
+        "quantity": "10"
+    },
+    {
+        "name": "Honda CBR650R",
+        "img": "https://media.zigcdn.com/media/model/2022/Jan/cbr650r_600x400.jpg",
+        "price": "$300",
+        "description": "Honda CBR650R is powered by 648.72 cc engine.This CBR650R engine generates a power of 87.01",
+        "SellerName": "Albert Dera",
+        "quantity": "10"
+    },
+    {
+        "name": "Yamaha YZF R3",
+        "img": "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2018/05/r3-1.jpg",
+        "price": "$300",
+        "description": "Yamaha YZF-R3 was re-launched in India at Auto Expo 2018 with better features and a B-IV compliant.",
+        "SellerName": "ian dooley",
+        "quantity": "10"
+    },
+    {
+        "name": "Honda Hornet",
+        "img": "https://media.zigcdn.com/media/model/2022/Apr/honda-hornet-20-abc-right-side-view_600x400.jpg",
+        "price": "$1250",
+        "description": "Honda Hornet 2.0 ; Max Power, 17.26 PS @ 8500 rpm ; Max Torque, 16.1 Nm @ 6000 rpm ; Front Brake",
+        "SellerName": "Toa Heftiba",
+        "quantity": "14"
+    },
+    {
+        "name": "Yamaha YZF-R1",
+        "img": "https://financialexpresswpcontent.s3.amazonaws.com/uploads/2017/05/YZFR1-large.jpg",
+        "price": "$1500",
+        "description": "YZF-R1 is Yamaha’s fastest, quickest and most powerful Superbike ever",
+        "SellerName": "Seth Doyle",
+        "quantity": "10"
+    },
+    {
+        "name": "Yamaha MT-15",
+        "img": "https://media.zigcdn.com/media/model/2022/Apr/yamaha-mt-15-version-2-right-side-view_600x400.jpg",
+        "price": "$1300",
+        "description": "It is enhanced with Variable Valve Actuation (VVA) technology.",
+        "SellerName": "Erik Lucatero",
+        "quantity": "10"
+    },
+    {
+        "name": "Royal Enfield",
+        "img": "https://images.carandbike.com/bike-images/large/royal-enfield/meteor-350/royal-enfield-meteor-350.webp?v=15",
+        "price": "$1100",
+        "description": " Honda Hornet 2.0 full specifications, features, engine displacement, kerb weight, ground clearance, wheelbase",
+        "SellerName": "Brooke Cagle",
+        "quantity": "10"
+    },
+    {
+        "name": "Yamaha FZ",
+        "img": "https://acimotors-bd.com/assets/images/product/atumobile/fzs-fi/armada-blue/fzs-armada-blue-2.jpg",
+        "price": "$1800",
+        "description": "The Yamaha FZ Series set a new benchmark for biking. The FZS-FI takes it to the next level",
+        "SellerName": "Dami Adebayo",
+        "quantity": "10"
+    },
+    {
+        "name": "Honda X-Blade",
+        "img": "https://imgd.aeplcdn.com/393x221/n/cw/ec/48644/x-blade-right-front-three-quarter.jpeg?isig=0&q=75",
+        "price": "$975",
+        "description": " The Honda X-Blade is powered by 162.71cc BS6 engine which develops a power of 13.67 bhp and a torque of 14.7 Nm. ",
+        "SellerName": "Huston Wilson",
+        "quantity": "10"
+    },
+    {
+        "name": "Honda CB350RS",
+        "img": "https://imgd.aeplcdn.com/393x221/bw/models/honda-cb350rs-standard20210216125021.jpg?q=75",
+        "price": "$980",
+        "description": " The Honda CB350RS is powered by 348.36cc BS6 engine which develops a power of 20.78 bhp",
+        "SellerName": "Rowan Chestnut",
+        "quantity": "10"
+    },
+    {
+        "name": "F250",
+        "img": "https://images.moneycontrol.com/static-mcnews/2021/11/f250-740x435.png?impolicy=website&width=770&height=431",
+        "price": "$985",
+        "description": "The firm launched the first Pulsar twins (the 150cc and the 180cc models) in 2001",
+        "SellerName": "Ayo Ogunseinde",
+        "quantity": "10"
+    },
+    {
+        "name": "PULSAR NS125",
+        "img": "https://media.zigcdn.com/media/content/2021/Apr/bajaj_pulsar_ns125_launch_zig_640x480.jpg",
+        "price": "$990",
+        "description": " Bajaj Pulsar NS 125 ; Max Power, 11.99 PS @ 8500 rpm.",
+        "SellerName": "Michael Dam",
+        "quantity": "10"
+    }
+]
