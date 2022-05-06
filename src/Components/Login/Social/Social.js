@@ -17,6 +17,7 @@ const Social = () => {
         loadingGoogle,
         errorGoogle
     ] = useSignInWithGoogle(auth);
+
     // GitHub
     const [signInWithGithub,
         userGithub,
@@ -24,11 +25,11 @@ const Social = () => {
         errorGithub
     ] = useSignInWithGithub(auth);
 
+
     if (errorGoogle || errorGithub) {
-        errorElement = <div>
+        errorElement =
             <h6 className='text-danger'>Error: {errorGoogle?.message} {errorGithub?.message}</h6>
-        </div>
-    }
+    };
     if (userGoogle || userGithub) {
         navigate('/home');
     };
@@ -36,7 +37,7 @@ const Social = () => {
 
     return (
         <div>
-            <div className='d-flex d align-items-center'>
+            <div className='d-flex d align-items-center w-50 mt-0 mx-auto'>
                 <div style={{ height: '2px', }} className='lefts-div'></div>
                 <p className='m-2 p-2 pg-style'>or</p>
                 <div style={{ height: '2px' }} className='rights-div'></div>
@@ -44,22 +45,23 @@ const Social = () => {
             {
                 errorElement
             }
-            <div style={{ marginBottom: '100px', marginTop: '0' }} className='pt-3'>
+            <div style={{ marginBottom: '100px', marginTop: '0' }} className='pt-1'>
                 <Button variant=""
                     onClick={() => signInWithGoogle()}
-                    style={{ height: '59px' }}
-                    className=" custom-bg-color mx-auto d-block mt-2 w-50 ">
+                    style={{ height: '59px', border: '2px solid black' }}
+                    className="btn-lR shadow-lg  mx-auto d-block mt-2 w-50 ">
 
-                    <img style={{ width: '32px ', marginRight: '10px' }} src={Google} alt="" />
-                    <span className='span-styles text-white'>Google Sign In</span>
+                    <img style={{ width: '32px ', marginRight: '10px' }} className='img-style' src={Google} alt="" />
+                    <span className='span-styles text-black'>Google Sign In</span>
 
                 </Button>
 
-                <Button variant=""
+                <Button variant="dark"
                     onClick={() => signInWithGithub()}
-                    className="mx-auto d-block custom-bg-color mt-2 w-50">
-                    <img style={{ width: '45px', marginRight: '10px' }} className='text-color' src={Github} alt="" />
-                    <span className='span-style text-white'>GitHub</span>
+                    className=" btn-lR mx-auto d-block mt-2 w-50">
+
+                    <img style={{ width: '45px', marginRight: '10px' }} className=' text-color' src={Github} alt="" />
+                    <span className='span-styles text-white'>GitHub</span>
                 </Button>
 
             </div>

@@ -3,6 +3,10 @@
     width: 300px;
 }
 
+.img-style {
+    padding-bottom: 3px;
+}
+
 .pg-style {
     font: 1em sans-serif;
     font-size: 20px;
@@ -14,7 +18,7 @@
 }
 
 .span-styles {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .d {

@@ -26,7 +26,7 @@ const Item = ({ item }) => {
                         <h5>Supplier Name:</h5> <h6 className=' ps-1 pt-1'>{SellerName}</h6>
                     </div>
                     <Link to='/inventory/:InventoryId'>
-                        <Button bg="dark" variant="dark" className='btn-product'>STOCK UPDATE</Button>
+                        <Button bg="dark" variant="dark" className='btn-product w-16'>STOCK UPDATE</Button>
                     </Link>
                 </Card.Body>
             </Card>
