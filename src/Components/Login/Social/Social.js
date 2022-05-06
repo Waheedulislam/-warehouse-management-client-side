@@ -4,26 +4,34 @@ import Github from '../../../img/GitHub1.png'
 import './Social.css'
 import { Button } from 'react-bootstrap';
 import auth from '../../../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 
 const Social = () => {
-    const [signInWithGoogle,
-        user,
-        loading,
-        error
-    ] = useSignInWithGoogle(auth);
     let errorElement;
     const navigate = useNavigate();
 
-    if (error) {
+    // Google
+    const [signInWithGoogle,
+        userGoogle,
+        loadingGoogle,
+        errorGoogle
+    ] = useSignInWithGoogle(auth);
+    // GitHub
+    const [signInWithGithub,
+        userGithub,
+        loadingGithub,
+        errorGithub
+    ] = useSignInWithGithub(auth);
+
+    if (errorGoogle || errorGithub) {
         errorElement = <div>
-            <h6 className='text-danger'>Error: {error.message}</h6>
+            <h6 className='text-danger'>Error: {errorGoogle?.message} {errorGithub?.message}</h6>
         </div>
     }
-    if (user) {
-        navigate('/home')
-    }
+    if (userGoogle || userGithub) {
+        navigate('/home');
+    };
 
 
     return (
@@ -48,6 +56,7 @@ const Social = () => {
                 </Button>
 
                 <Button variant=""
+                    onClick={() => signInWithGithub()}
                     className="mx-auto d-block custom-bg-color mt-2 w-50">
                     <img style={{ width: '45px', marginRight: '10px' }} className='text-color' src={Github} alt="" />
                     <span className='span-style text-white'>GitHub</span>
