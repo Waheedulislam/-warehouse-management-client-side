@@ -1,10 +1,13 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../shared/Loading/Loading';
 import Social from '../Social/Social';
 import './Login.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -14,13 +17,24 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
     let errorElement;
 
+    // reset Email
+    const [
+        sendPasswordResetEmail,
+        sending,
+    ] = useSendPasswordResetEmail(auth);
 
+    // signIn email
     const [
         signInWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+
+    //loading
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
     if (user) {
         navigate(from, { replace: true });
     }
@@ -34,56 +48,59 @@ const Login = () => {
         const password = passwordRef.current.value;
 
         signInWithEmailAndPassword(email, password)
-
-
     }
+
     const navigateRegister = event => {
         navigate('/register');
+    }
+    //  reset password
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        if (email) {
+            await sendPasswordResetEmail(email);
+            toast('Reset Email');
+        } else {
+            toast('Please enter your email address ...!')
+        }
     }
 
     return (
         <div className='w-50 mx-auto register-form'>
 
-            {/* <Form onSubmit={handleSubmit}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
-                </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Submit
-                </Button>
-            </Form> */}
-            <div class="card" style={{ hight: '30px' }} className='shadow-lg mt-4'>
-                <hr />
-                <h1 className='text-center' variant="dark">Please Login</h1>
-                <div class="card-body ">
-                    <form onSubmit={handleSubmit} className='w-50 mx-auto'>
-                        <input ref={emailRef} type="email" name="email" id="" placeholder='Email Address' required />
-                        <input ref={passwordRef} type="password" name="password" id="" placeholder='Password' required />
+            <div>
+                <div class="card" style={{ hight: '30px' }} className='shadow-lg mt-4'>
+                    <hr />
+                    <h1 className='text-center' variant="dark">Please Login</h1>
+                    <div class="card-body ">
+                        <form onSubmit={handleSubmit} className='w-50 mx-auto'>
+                            <input ref={emailRef} type="email" name="email" id="" placeholder='Email Address' required />
+                            <input ref={passwordRef} type="password" name="password" id="" placeholder='Password' required />
 
-                        <Button
-                            type="submit"
-                            value="Login"
-                            bg="dark"
-                            variant="dark"
-                            className='btn-lR  w-50 mx-auto d-block shadow-lg'><h5>Login</h5></Button>
-                        {/* <Button
-                    type="submit" variant="bg-success" className="btn btn-color custom-bg-color mx-auto d-block mt-2 w-50 btn-hight  mt-3"><span className='text-white'><h5>Register</h5></span></Button> */}
+                            <Button
+                                type="submit"
+                                value="Login"
+                                bg="dark"
+                                variant="dark"
+                                className='btn-lR  w-50 mx-auto d-block shadow-lg'><h5>Login</h5></Button>
 
-                    </form>
-                    {
-                        errorElement
-                    }
-                    <h6 className='mt-3 w-50 mx-auto'>New to BIKE WAY ? <Link to='/register' className='text-danger pe-auto  text-decoration-none' onClick={navigateRegister}>Please Register</Link></h6>
-                    <Social></Social>
+                        </form>
+                        <div className='mx-auto w-50'>
+                            {
+                                errorElement
+                            }
+                        </div>
+                        <h6 className='mt-3 w-50 mx-auto'>Don't have an account? <Link to='/register' className='text-danger pe-auto  text-decoration-none' onClick={navigateRegister}>Create Account</Link></h6>
+
+                        <h6 className='mt-3 w-50 mx-auto'>Forget PassWord ?
+                            <button className='btn btn-link pt-3 ps-2 text-danger text-decoration-none' onClick={resetPassword}><h6>Reset Password</h6></button>
+                        </h6>
+
+                        <Social></Social>
+                        <ToastContainer />
+                    </div>
+                    <hr />
                 </div>
-                <hr />
             </div>
 
         </div >

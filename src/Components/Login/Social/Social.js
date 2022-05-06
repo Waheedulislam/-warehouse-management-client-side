@@ -6,6 +6,7 @@ import { Button } from 'react-bootstrap';
 import auth from '../../../firebase.init';
 import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../shared/Loading/Loading';
 
 const Social = () => {
     let errorElement;
@@ -25,6 +26,9 @@ const Social = () => {
         errorGithub
     ] = useSignInWithGithub(auth);
 
+    if (loadingGithub || loadingGoogle) {
+        return <Loading></Loading>
+    }
 
     if (errorGoogle || errorGithub) {
         errorElement =
@@ -49,16 +53,16 @@ const Social = () => {
                 <Button variant=""
                     onClick={() => signInWithGoogle()}
                     style={{ height: '59px', border: '2px solid black' }}
-                    className="btn-lR shadow-lg  mx-auto d-block mt-2 w-50 ">
+                    className="gg-style shadow-lg  mx-auto d-block mt-2 w-50 ">
 
                     <img style={{ width: '32px ', marginRight: '10px' }} className='img-style' src={Google} alt="" />
-                    <span className='span-styles text-black'>Google Sign In</span>
+                    <span className='span-styles text-black'>Google SignIn</span>
 
                 </Button>
 
                 <Button variant="dark"
                     onClick={() => signInWithGithub()}
-                    className=" btn-lR mx-auto d-block mt-2 w-50">
+                    className=" gg-style mx-auto d-block mt-2 w-50">
 
                     <img style={{ width: '45px', marginRight: '10px' }} className=' text-color' src={Github} alt="" />
                     <span className='span-styles text-white'>GitHub</span>
