@@ -1,23 +1,23 @@
-.left-div {
+.lefts-div {
     background-color: #1b2933;
     width: 300px;
 }
 
-.p-style {
+.pg-style {
     font: 1em sans-serif;
     font-size: 20px;
 }
 
-.right-div {
+.rights-div {
     background-color: #1b2933;
     width: 300px;
 }
 
-.span-style {
+.span-styles {
     font-size: 20px;
 }
 
-.d-flex {
+.d {
     margin-left: 30px;
 }
 
