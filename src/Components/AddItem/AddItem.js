@@ -1,48 +1,75 @@
 import React from 'react';
-import { useForm } from "react-hook-form";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+import auth from '../../firebase.init'
 
 const AddItem = () => {
-    const { register, handleSubmit } = useForm();
 
-    const onSubmit = data => {
-        console.log(data)
+    const [user] = useAuthState(auth);
+
+    const handleNewItem = event => {
+        event.preventDefault();
+        const addItem = {
+            name: event.target.name.value,
+            img: event.target.img.value,
+            price: event.target.price.value,
+            email: user.email,
+            shortDescription: event.target.description.value,
+        }
         const url = `http://localhost:5000/item`;
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(addItem)
         })
             .then(res => res.json())
-            .then(result => {
-                console.log(result);
+            .then(res => {
+                console.log(res);
+                toast('Successful Item added')
+                event.target.reset();
             })
-    };
+    }
+    // const onSubmit = data => {
+    //     const order = {
+    //         email: user.email
+    //     }
+    //     const url = `http://localhost:5000/item?email=${order}`;
+    //     fetch(url, {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             console.log(result);
+    //         })
+    // };
 
 
     return (
-        <div className='mx-auto w-50'>
-            <h1 className='text-center text-success'><span className='text-success'>Add</span><span className='text-danger'> New </span> Item</h1>
+        <div>
+            <h1>add item</h1>
+            <form onSubmit={handleNewItem} className="text-center">
+                <input required className='w-50 mb-2' type="text" name="name" placeholder='Name' id="" />
+                <br />
 
-            <div className='card shadow-lg'>
-                <div className='card-body ' >
-                    <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
-                        <input className='mb-2' placeholder='Name' required {...register("name")} />
+                <input required className='w-50 mb-2' type="text" name="img" placeholder='photo URL' id="" />
+                <br />
 
-                        <input className='mb-2' type='number' placeholder='Quantity' required {...register("quantity")} />
-
-                        <textarea className='mb-2' placeholder='Description' required {...register("description")} />
-
-                        <input className='mb-2' placeholder='Supplier Name' required {...register("SellerName")} />
-
-                        <input className='mb-2' placeholder='Price' required type="number" {...register("price")} />
-
-                        <input className='mb-2' placeholder='Photo URL' required type="text" {...register("img")} />
-                        <input value='Add Product' type="submit" />
-                    </form>
-                </div>
-            </div>
+                <input required className='w-50 mb-2' type="text" name="price" placeholder='Price' id="" />
+                <br />
+                <input required className='w-50 mb-2' type="text" name='quantity' placeholder='quantity' />
+                <br />
+                <input required className='w-50 mb-2' type="email" value={user.email} readOnly disabled name="email" id="" placeholder='email' />
+                <br />
+                <input required className='w-50 mb-2' type="text" name="description" placeholder='shortDescriptions' id="" />
+                <br />
+                <input type="submit" value="Add Item" />
+            </form>
         </div>
     );
 };

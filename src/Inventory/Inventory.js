@@ -36,11 +36,12 @@ const Inventory = () => {
                             <div className='d-flex justify-content-center'>
                                 <h4 className='text-center ps-1 pb-1'>Quantity:</h4> <h5 className='pt-1 ps-1'>{item.quantity}</h5>
                             </div>
-                            <div>
-                                <Button className='btn btn primary'>Delivered</Button>
-                            </div>
                             <Link to='/manageInventory'> <Button className='btn btn primary'>Manage Item</Button></Link>
                         </div>
+                        <from>
+                            <input type="number" name="number" id="" />
+                            <Button className='btn btn primary'>Delivered</Button>
+                        </from>
 
                     </Card.Body>
                 </Card>
