@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useParams } from 'react-router-dom';
 import Banner from '../../src/img/bike/banner2 (2).png'
+import './inventory.css'
 
 const Inventory = () => {
     const { inventoryId } = useParams();
@@ -13,30 +14,33 @@ const Inventory = () => {
             .then(data => setItem(data))
     }, [])
     return (
-        <div className='container d-flex '>
-            <div className='mx-auto pt-2' >
-                <Card className='shadow-lg w-80 bg-body rounded '>
+        <div className='d-flex w-100'>
+            <div className='mx-auto pt-2 card-style' >
+                <Card className='shadow-lg  mx-auto ' >
                     <Card.Body >
-                        <Card.Img variant="top" src={item.img} />
-                        <hr />
-                        <h1 className='text-center'>{item.name}</h1>
-                        <h5 >
-                            {item.description}
-                        </h5>
-                        <hr />
-                        <div className='d-flex justify-content-center'>
-                            <h5>Supplier Name:</h5> <h6 className=' ps-1 pt-1'>{item.SellerName}</h6>
-                        </div>
-                        <div className='d-flex justify-content-center'>
-                            <h5 className='text-center ps-2'>Price:</h5> <h6 className=' ps-1 pe-2'>{item.price}</h6>
-                        </div>
-                        <div className='d-flex justify-content-center'>
-                            <h4 className='text-center ps-1 pb-1'>Quantity:</h4> <h5 className=' ps-1'>{item.quantity}</h5>
-                        </div>
+                        <Card.Img className='img-style' variant="top" src={item.img} />
+
                         <div>
-                            <Button className='btn btn primary'>Delivered</Button>
+                            <hr />
+                            <h1 className='text-center'>{item.name}</h1>
+                            <h5  >
+                                {item.description}
+                            </h5>
+                            <hr />
+                            <div className='d-flex justify-content-center'>
+                                <h5>Supplier Name:</h5> <h6 className=' ps-1 pt-1'>{item.SellerName}</h6>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                                <h5 className='text-center ps-2'>Price:</h5> <h6 className=' ps-1 pe-2'>{item.price}</h6>
+                            </div>
+                            <div className='d-flex justify-content-center'>
+                                <h4 className='text-center ps-1 pb-1'>Quantity:</h4> <h5 className='pt-1 ps-1'>{item.quantity}</h5>
+                            </div>
+                            <div>
+                                <Button className='btn btn primary'>Delivered</Button>
+                            </div>
+                            <Link to='/manageInventory'> <Button className='btn btn primary'>Manage Item</Button></Link>
                         </div>
-                        <Link to='/manageInventory'> <Button className='btn btn primary'>Manage Item</Button></Link>
 
                     </Card.Body>
                 </Card>
@@ -46,7 +50,7 @@ const Inventory = () => {
                 {/* <img src={Banner} alt="" /> */}
             </div>
 
-        </div>
+        </div >
 
     );
 };

@@ -9,7 +9,7 @@ const Items = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                setItems(data)
+                setItems(data.slice(0, 6))
             })
     }, [])
     return (

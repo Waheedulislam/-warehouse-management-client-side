@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './ManageItem.css'
 
 const ManageItem = () => {
@@ -15,15 +16,20 @@ const ManageItem = () => {
     }, [])
     return (
         <div>
+            <h1 className='text-center text-dark'><span className='text-success'>Total</span> <span className='text-danger'>Products: {items.length}</span></h1>
+            <Link to='/addItem'>
+                <Button variant="dark" className='mx-auto d-block   w-15 m-2'><h6 className='text decoration none' >
+                    ADD NEW ITEM</h6></Button>
+            </Link>
             <div>
-                <Table striped bordered hover size="sm" responsive>
+                <Table className='container mt-2' striped bordered hover size="sm" responsive>
                     <thead className='tdt-res'>
                         <tr>
-                            <th>Name</th>
+                            <th><h4>Name</h4></th>
                             <h5 ><small>Images</small></h5>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Update</th>
+                            <th><h4>Price</h4></th>
+                            <th><h4>Quantity</h4></th>
+                            <th><h4>Update</h4></th>
                         </tr>
                     </thead>
                     <tbody className='td-res' style={{ width: '120px' }}>
