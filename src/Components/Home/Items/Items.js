@@ -3,8 +3,9 @@ import Item from '../Item/Item';
 
 const Items = () => {
     const [items, setItems] = useState([]);
+
     useEffect(() => {
-        const url = `data.json`
+        const url = `http://localhost:5000/item`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -17,6 +18,7 @@ const Items = () => {
             <div className='row'>
                 {
                     items.map(item => <Item
+                        key={item._id}
                         item={item}
                     ></Item>)
                 }

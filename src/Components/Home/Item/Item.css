@@ -5,6 +5,11 @@
     font-size: 17px;
 }
 
+.item {
+    position: relative;
+    margin-right: 0%;
+}
+
 .btn-product:hover {
     border-radius: 20px;
 
