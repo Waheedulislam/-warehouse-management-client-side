@@ -1,9 +1,10 @@
 import React from 'react';
+import Not from '../../../img/404.jpg';
 
 const NotFound = () => {
     return (
-        <div>
-            <h1 className='text-center text-danger'>Not Found</h1>
+        <div className=' container  mx-auto'>
+            <img className='w-50' src={Not} alt="" />
         </div>
     );
 };
