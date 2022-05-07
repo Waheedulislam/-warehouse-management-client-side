@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init'
@@ -52,8 +53,7 @@ const AddItem = () => {
                 <input required autoComplete='off' className='w-50 mb-2' type="text" name="img" placeholder='photo URL' id="" />
                 <br />
 
-
-                <input type="submit" value="Add Item" />
+                <Button type="submit" bg="dark" variant="dark" className='mb-5 w-16'>Add Item</Button>
             </form>
         </div >
     );
