@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useItems from '../../Hooks/useItems';
 import './ManageItem.css'
 
 const ManageItem = () => {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useItems();
 
-    useEffect(() => {
-        const url = `http://localhost:5000/item`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setItems(data)
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure want to delete ?')
+        if (proceed) {
+            const url = `http://localhost:5000/item/${id}`
+            fetch(url, {
+                method: 'DELETE'
             })
-    }, [])
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const uiDelete = items.filter(item => item._id !== id);
+                    setItems(uiDelete);
+                })
+        }
+    }
     return (
         <div>
             <h1 className='text-center text-dark'><span className='text-success'>Total</span> <span className='text-danger'>Products: {items.length}</span></h1>
@@ -26,7 +34,7 @@ const ManageItem = () => {
                     <thead className='tdt-res'>
                         <tr>
                             <th><h4>Name</h4></th>
-                            <h5 ><small>Images</small></h5>
+                            <th><h5 ><small>Images</small></h5></th>
                             <th><h4>Price</h4></th>
                             <th><h4>Quantity</h4></th>
                             <th><h4>Update</h4></th>
@@ -43,7 +51,8 @@ const ManageItem = () => {
                                     <td style={{ width: '100px' }}> <h4>{item.price}</h4> </td>
                                     <td style={{ width: '100px' }}> <h4>{item.quantity}</h4> </td>
                                     <td style={{ width: '80px' }}>
-                                        <Button className='btn btn-danger'>Delete</Button>
+
+                                        <Button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</Button>
                                         <br />
                                         <br />
                                         <Button style={{ width: '74px' }} className='btn btn-success'>Edit</Button>
