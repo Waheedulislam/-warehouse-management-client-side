@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Table } from 'react-bootstrap';
+import { Button, Table } from 'react-bootstrap';
 
 const ManageItem = () => {
     const [items, setItems] = useState([]);
@@ -14,28 +14,30 @@ const ManageItem = () => {
     }, [])
     return (
         <div>
-            <h1 className='text-center text-primary'> Item:{items.length}</h1>
-            <Table striped bordered hover size="sm">
+            <Table className='container' striped bordered hover size="sm">
                 <thead>
                     <tr>
-                        <th>Images</th>
                         <th>Name</th>
+                        <th>Images</th>
                         <th>Price</th>
                         <th>Quantity</th>
-                        <th>Supplier</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ width: '120px' }}>
                     {
                         items.map(item => {
                             return <tr key={item._id}>
-                                <td>
+                                <td style={{ width: '130px' }} > <h4>{item.name}</h4> </td>
+                                <td style={{ width: '130px' }}>
                                     <img style={{ width: '130px' }} src={item.img} alt="" />
                                 </td>
-                                <td>{item.name}</td>
-                                <td>{item.price}</td>
-                                <td>{item.quantity}</td>
-                                <td>{item.SellerName}</td>
+                                <td style={{ width: '130px' }}> <h6>{item.price}</h6> </td>
+                                <td style={{ width: '130px' }}> <h6>{item.quantity}</h6> </td>
+                                <td style={{ width: '130px' }}>
+                                    <Button className='btn btn-danger'>Delete</Button>
+                                    <br />
+                                    <Button className='btn btn-success'>Edit</Button>
+                                </td>
                             </tr>
                         })
                     }

@@ -12,7 +12,7 @@ const Header = () => {
         signOut(auth);
     }
     return (
-        <div className='sticky-top'>
+        <div className='sticky-top w-full'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
                 <Container>
                     <Navbar.Brand as={Link} to="/home"><h1>BIKE WAY</h1></Navbar.Brand>
@@ -30,7 +30,8 @@ const Header = () => {
                                 <>
                                     <Nav.Link as={Link} to='/manageInventory'><h6>Manage Inventory</h6></Nav.Link>
                                     <Nav.Link as={Link} to='/addItem'><h6>Add Item</h6></Nav.Link>
-                                    <Nav.Link as={Link} to='/myItem'><h6>My Item</h6></Nav.Link></>
+                                    <Nav.Link as={Link} to='/myItem'><h6>My Item</h6></Nav.Link>
+                                </>
                             }
                             {
 
