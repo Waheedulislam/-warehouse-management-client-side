@@ -22,7 +22,7 @@ const MyItems = () => {
         <div>
             <h1 className='text-center text-dark'><span className='text-success'>MY</span> <span className='text-danger'>Add </span><span className='text-success'>Items</span></h1>
             <div>
-                <Table className='container mt-2' striped bordered hover size="sm" responsive>
+                <Table className='container mt-2 text-center' striped bordered hover size="sm" responsive>
                     <thead className='tdt-res'>
                         <tr>
                             <th><h4>Name</h4></th>

@@ -29,7 +29,7 @@ const ManageItem = () => {
                     ADD NEW ITEM</h5></button>
             </Link>
             <div>
-                <Table className='container mt-2' striped bordered hover size="sm" responsive>
+                <Table className='container mt-2 text-center' striped bordered hover size="sm" responsive>
                     <thead className='tdt-res'>
                         <tr>
                             <th><h4>Name</h4></th>
