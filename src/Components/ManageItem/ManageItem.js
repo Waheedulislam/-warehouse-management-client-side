@@ -5,7 +5,6 @@ import './ManageItem.css'
 
 const ManageItem = () => {
     const [items, setItems] = useItems();
-    console.log(items);
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure want to delete ?')
@@ -26,7 +25,7 @@ const ManageItem = () => {
         <div>
             <h1 className='text-center text-dark'><span className='text-success'>Total</span> <span className='text-danger'>Products: {items.length}</span></h1>
             <Link to='/addItem'>
-                <button className='bg-white shadow-lg mt-3 mb-3' style={{ marginLeft: '700px' }}><h5 className='d-flex pt-2'>
+                <button className='bg-white shadow-lg mt-3 mb-3' style={{ marginLeft: '640px' }}><h5 className='d-flex pt-2'>
                     ADD NEW ITEM</h5></button>
             </Link>
             <div>

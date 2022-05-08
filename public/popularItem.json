@@ -1,0 +1,56 @@
+[
+    {
+        "id": "6",
+        "name": "Yamaha MT-15",
+        "img": "https://www.india.com/wp-content/uploads/2022/04/Yamaha-MT-15-V20.jpg",
+        "price": "$1300",
+        "description": "It is enhanced with Variable Valve Actuation (VVA) technology.Taking ahead the legacy of the MT series,",
+        "SellerName": "Erik Lucatero",
+        "quantity": "10"
+    },
+    {
+        "id": "1",
+        "name": "Yamaha R15 v3",
+        "img": "https://static.autox.com/uploads/2018/10/Yamaha-YZF-R15-V3-gray-color-4-.jpg",
+        "price": "$1500",
+        "description": "The Yamaha YZF-R15 V3.0 BS6 gets a slightly reworked engine and new features. It is powered by a 155cc,",
+        "SellerName": "Jurica Koletic",
+        "quantity": "10"
+    },
+    {
+        "id": "2",
+        "name": "Honda CBR650R",
+        "img": "https://imgcdnblog.carmudi.com.ph/wp-content/uploads/2022/02/17073736/HONDA-CBR650R-1.jpg?resize=500x333",
+        "price": "$300",
+        "description": "Honda CBR650R is powered by 648.72 cc engine.This CBR650R engine generates a power of 87.01",
+        "SellerName": "Albert Dera",
+        "quantity": "10"
+    },
+    {
+        "id": "3",
+        "name": "Yamaha YZF-R3",
+        "img": "https://i.ytimg.com/vi/F9fDrRLzClA/mqdefault.jpg",
+        "price": "$300",
+        "description": "Yamaha YZF-R3 was re-launched in India at Auto Expo 2018 with better.",
+        "SellerName": "ian dooley",
+        "quantity": "10"
+    },
+    {
+        "id": "4",
+        "name": "Honda Hornet",
+        "img": "https://i.ytimg.com/vi/26B7jUm-tgY/maxresdefault.jpg",
+        "price": "$1250",
+        "description": "Honda Hornet 2.0 ; Max Power, 17.26 PS @ 8500 rpm ",
+        "SellerName": "Toa Heftiba",
+        "quantity": "14"
+    },
+    {
+        "id": "5",
+        "name": "Yamaha YZF-R1",
+        "img": "https://i.ytimg.com/vi/G1qEPmaFm6o/mqdefault.jpg",
+        "price": "$1500",
+        "description": "YZF-R1 is Yamaha’s fastest, quickest and most powerful Superbike ever",
+        "SellerName": "Seth Doyle",
+        "quantity": "10"
+    }
+]

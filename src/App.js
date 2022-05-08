@@ -12,6 +12,7 @@ import RequireAuth from './Components/Login/RequireAuth/RequireAuth';
 import ManageItem from './Components/ManageItem/ManageItem';
 import AddItem from './Components/AddItem/AddItem';
 import MyItems from './Components/MyItems/MyItems';
+import PopularItems from './Components/Home/PopularItems/PopularItems';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/popularItem' element={<PopularItems></PopularItems>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/blogs' element={
