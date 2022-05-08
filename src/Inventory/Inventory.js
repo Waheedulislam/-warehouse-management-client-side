@@ -20,6 +20,7 @@ const Inventory = () => {
 
             const getData = async () => {
                 const response = await axios.put(url, { newQuantity })
+                alert('Successful Item added')
                 setItem(response.data);
             }
             getData();
@@ -28,6 +29,7 @@ const Inventory = () => {
         }
     }
 
+    // add new quantity
     const handleQuantitySubmit = e => {
         e.preventDefault();
         try {
@@ -45,7 +47,6 @@ const Inventory = () => {
 
 
     useEffect(() => {
-
         try {
             const url = `http://localhost:5000/itemDetails/${inventoryId}`;
 
