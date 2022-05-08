@@ -1,7 +1,7 @@
 # Bike Way
-## [Live-Site]( https://gym-trainer-services.web.app)
+## [Live-Site](https://inventory-house-a0164.web.app/)
 
-Click  here to Live-Site-link: https://gym-trainer-services.web.app.
+Click  here to Live-Site-link: https://inventory-house-a0164.web.app/
 
 ## This website details:
 ***

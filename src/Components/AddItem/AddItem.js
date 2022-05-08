@@ -18,7 +18,7 @@ const AddItem = () => {
             quantity: event.target.quantity.value,
             shortDescription: event.target.description.value,
         }
-        const url = `http://localhost:5000/item`;
+        const url = `https://lit-fjord-75870.herokuapp.com/item`;
         fetch(url, {
             method: 'POST',
             headers: {

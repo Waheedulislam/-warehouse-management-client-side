@@ -16,7 +16,7 @@ const Inventory = () => {
 
         try {
             const newQuantity = quantity - 1;
-            const url = `http://localhost:5000/item/${inventoryId}`
+            const url = `https://lit-fjord-75870.herokuapp.com/item/${inventoryId}`
 
             const getData = async () => {
                 const response = await axios.put(url, { newQuantity })
@@ -33,7 +33,7 @@ const Inventory = () => {
     const handleQuantitySubmit = e => {
         e.preventDefault();
         try {
-            const url = `http://localhost:5000/addQuantity/${inventoryId}?oldQuantity=${item.quantity}`;
+            const url = `https://lit-fjord-75870.herokuapp.com/addQuantity/${inventoryId}?oldQuantity=${item.quantity}`;
 
             const updateQuantity = async () => {
                 const response = await axios.put(url, { quantity })
@@ -48,7 +48,7 @@ const Inventory = () => {
 
     useEffect(() => {
         try {
-            const url = `http://localhost:5000/itemDetails/${inventoryId}`;
+            const url = `https://lit-fjord-75870.herokuapp.com/itemDetails/${inventoryId}`;
 
             const add = async () => {
                 const response = await axios.get(url)

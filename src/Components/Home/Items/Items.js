@@ -5,7 +5,7 @@ const Items = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/item`
+        const url = `https://lit-fjord-75870.herokuapp.com/item`
         fetch(url)
             .then(res => res.json())
             .then(data => {
