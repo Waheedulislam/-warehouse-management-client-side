@@ -15,6 +15,7 @@ const AddItem = () => {
             img: event.target.img.value,
             price: event.target.price.value,
             email: user.email,
+            quantity: event.target.quantity.value,
             shortDescription: event.target.description.value,
         }
         const url = `http://localhost:5000/item`;
@@ -48,7 +49,7 @@ const AddItem = () => {
 
                 <input required autoComplete='off' className='w-50 mb-2' type="text" name="price" placeholder='Price' id="" />
                 <br />
-                <input required autoComplete='off' className='w-50 mb-2' type="text" name='quantity' placeholder='quantity' />
+                <input required autoComplete='off' className='w-50 mb-2' type="text" name='quantity' placeholder='Quantity' />
                 <br />
                 <input required autoComplete='off' className='w-50 mb-2' type="text" name="img" placeholder='photo URL' id="" />
                 <br />
