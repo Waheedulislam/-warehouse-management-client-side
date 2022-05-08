@@ -20,7 +20,7 @@ const Inventory = () => {
 
             const getData = async () => {
                 const response = await axios.put(url, { newQuantity })
-                alert('Successful Item added')
+                alert('Are you sure Want to Delivered')
                 setItem(response.data);
             }
             getData();
