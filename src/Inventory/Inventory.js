@@ -37,7 +37,7 @@ const Inventory = () => {
 
             const updateQuantity = async () => {
                 const response = await axios.put(url, { quantity })
-                console.log(response.data.massage);
+                alert(response.data.massage)
             }
             updateQuantity();
         } catch {
