@@ -13,10 +13,16 @@ A list of Bike way website used within the project and details:
 
 3)  It has been used  firebase framework .
 
-4)  It has been used many framework. firebase react hooks,react-bootstrap,bootstrap,custom-css,react-tost etc
+4)  The server site mongodb has been used on this website. And has been  deploy this site Heroku framework.
+
+4)  It has been used many framework. firebase react hooks,react-bootstrap,bootstrap,custom-css,react-tost etc.
 
 5)  Many important things have been used in the routes.
 
 6) Register and login has been used email-verification and forget-password.
 
-7) This website has been granted copyright (Copyright © 2022 bikeway.com)
+7) It has been used axios framework.
+
+8) Its website is deploy by Firebase framework.
+
+8) This website has been granted copyright (Copyright © 2022 bikeway.com)
