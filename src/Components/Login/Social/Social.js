@@ -46,9 +46,11 @@ const Social = () => {
                 <p className='m-2 p-2 pg-style'>or</p>
                 <div style={{ height: '2px' }} className='rights-div'></div>
             </div>
-            {
-                errorElement
-            }
+            <div className='w-50 mx-auto'>
+                {
+                    errorElement
+                }
+            </div>
             <div style={{ marginBottom: '100px', marginTop: '0' }} className='pt-1'>
                 <Button variant=""
                     onClick={() => signInWithGoogle()}
@@ -56,7 +58,7 @@ const Social = () => {
                     className="gg-style shadow-lg  mx-auto d-block mt-2 w-50 ">
 
                     <img style={{ width: '32px ', marginRight: '10px' }} className='img-style' src={Google} alt="" />
-                    <span className='span-styles text-black'>Google SignIn</span>
+                    <span className='span-styles text-black'>Google</span>
 
                 </Button>
 

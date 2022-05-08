@@ -43,8 +43,7 @@ const Register = () => {
     }
 
     return (
-        <div className='register-form'>
-
+        <div className='register-form container'>
 
             <div class="card" className='shadow-lg'>
                 <hr />
