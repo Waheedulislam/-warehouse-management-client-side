@@ -19,4 +19,4 @@ A list of Bike way website used within the project and details:
 
 6) Register and login has been used email-verification and forget-password.
 
-7) This website has been granted copyright (Copyright © 2022 bodyflexgym.com)
+7) This website has been granted copyright (Copyright © 2022 bikeway.com)
