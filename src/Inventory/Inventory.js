@@ -20,7 +20,7 @@ const Inventory = () => {
 
             const getData = async () => {
                 const response = await axios.put(url, { newQuantity })
-                alert('Are you sure Want to Delivered')
+                alert('Are you sure Want to Delivered ?')
                 setItem(response.data);
             }
             getData();
@@ -43,6 +43,7 @@ const Inventory = () => {
         } catch {
 
         }
+        e.target.reset();
     }
 
 
