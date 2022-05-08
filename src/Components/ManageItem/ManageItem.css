@@ -9,3 +9,13 @@
         display: none;
     }
 }
+
+.bg-white {
+    border: 1px solid rgb(189, 120, 120);
+}
+
+.bg-white:hover {
+
+    background: #FFFFF1;
+    box-shadow: 1px;
+}

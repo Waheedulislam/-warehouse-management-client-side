@@ -25,8 +25,8 @@ const ManageItem = () => {
         <div>
             <h1 className='text-center text-dark'><span className='text-success'>Total</span> <span className='text-danger'>Products: {items.length}</span></h1>
             <Link to='/addItem'>
-                <button className='bg-white shadow-lg mt-3 mb-3' style={{ marginLeft: '640px' }}><h5 className='d-flex pt-2'>
-                    ADD NEW ITEM</h5></button>
+                <div className='container'><button className='bg-white shadow-lg mt-3 mb-3' ><h5 className='d-flex pt-2'>
+                    Add New Items</h5></button></div>
             </Link>
             <div>
                 <Table className='container mt-2 text-center' striped bordered hover size="sm" responsive>
